@@ -8,5 +8,4 @@ Mirror to GitHub:
   tags:
     - linux
   script:
-    - /usr/bin/git pull origin master
-    - /usr/bin/git push --mirror https://$GITHUB_USER:$GITHUB_PASS@github.com/daemondazz/esp01-motion-sensor.git
+    - /usr/bin/git push --prune https://$GITHUB_USER:$GITHUB_PASS@github.com/daemondazz/esp01-motion-sensor.git +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
