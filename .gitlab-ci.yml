@@ -8,5 +8,5 @@ Mirror to GitHub:
   tags:
     - linux
   script:
-    - /usr/bin/git pull
+    - /usr/bin/git pull origin master
     - /usr/bin/git push --mirror https://$GITHUB_USER:$GITHUB_PASS@github.com/daemondazz/esp01-motion-sensor.git
