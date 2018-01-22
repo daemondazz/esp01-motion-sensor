@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:Custom Components
 LIBS:power
 LIBS:device
 LIBS:switches
@@ -33,7 +32,6 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:ESP8266
-LIBS:ESP01 Motion Sensor-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -173,29 +171,6 @@ F 3 "" H 3200 1700 50  0001 C CNN
 	1    3200 1700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3000 1800 3400 1800
-Wire Wire Line
-	3200 1700 3200 1800
-Connection ~ 3200 1800
-Wire Wire Line
-	3300 1800 3300 1900
-Connection ~ 3300 1800
-Wire Wire Line
-	4100 1700 4100 1900
-Wire Wire Line
-	4000 1800 4100 1800
-Connection ~ 4100 1800
-Wire Wire Line
-	4100 2100 4100 2200
-Wire Wire Line
-	3700 2100 3700 2200
-Wire Wire Line
-	3300 2100 3300 2200
-Wire Wire Line
-	2600 2400 2600 2450
-Wire Wire Line
-	2700 2400 2700 2450
 NoConn ~ 3000 2000
 NoConn ~ 3000 2200
 NoConn ~ 3000 2100
@@ -282,6 +257,83 @@ F 3 "" H 3200 4200 50  0001 C CNN
 	1    3200 4200
 	1    0    0    -1  
 $EndComp
+$Comp
+L Conn_01x03_Female J2
+U 1 1 5A55A43D
+P 6900 4500
+F 0 "J2" H 6900 4700 50  0000 C CNN
+F 1 "Conn_01x03_Female" H 6900 4300 50  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x03_Pitch2.54mm" H 6900 4500 50  0001 C CNN
+F 3 "" H 6900 4500 50  0001 C CNN
+F 4 "SAM1213-03-ND" H 6900 4500 60  0001 C CNN "Digikey Part"
+	1    6900 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR011
+U 1 1 5A55A622
+P 6600 3850
+F 0 "#PWR011" H 6600 3700 50  0001 C CNN
+F 1 "+5V" H 6600 3990 50  0000 C CNN
+F 2 "" H 6600 3850 50  0001 C CNN
+F 3 "" H 6600 3850 50  0001 C CNN
+	1    6600 3850
+	1    0    0    -1  
+$EndComp
+Text Label 3800 4400 0    60   ~ 0
+RST
+Text Label 3800 4500 0    60   ~ 0
+CH_PD
+Text Label 6000 4400 0    60   ~ 0
+GPIO0
+Text Label 6000 4500 0    60   ~ 0
+GPIO2
+$Comp
+L SW_Push SW1
+U 1 1 5A55C0FA
+P 3650 4850
+F 0 "SW1" H 3700 4950 50  0000 L CNN
+F 1 "SW_Push" H 3650 4790 50  0000 C CNN
+F 2 "Buttons_Switches_SMD:SW_SPST_KMR2" H 3650 5050 50  0001 C CNN
+F 3 "" H 3650 5050 50  0001 C CNN
+F 4 "CKN10285CT-ND" H 3650 4850 60  0001 C CNN "Digikey Part"
+	1    3650 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 5A55C3FD
+P 3650 5150
+F 0 "#PWR012" H 3650 4900 50  0001 C CNN
+F 1 "GND" H 3650 5000 50  0001 C CNN
+F 2 "" H 3650 5150 50  0001 C CNN
+F 3 "" H 3650 5150 50  0001 C CNN
+	1    3650 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 1800 3400 1800
+Wire Wire Line
+	3200 1700 3200 1800
+Connection ~ 3200 1800
+Wire Wire Line
+	3300 1800 3300 1900
+Connection ~ 3300 1800
+Wire Wire Line
+	4100 1700 4100 1900
+Wire Wire Line
+	4000 1800 4100 1800
+Connection ~ 4100 1800
+Wire Wire Line
+	4100 2100 4100 2200
+Wire Wire Line
+	3700 2100 3700 2200
+Wire Wire Line
+	3300 2100 3300 2200
+Wire Wire Line
+	2600 2400 2600 2450
+Wire Wire Line
+	2700 2400 2700 2450
 Wire Wire Line
 	5800 4400 6700 4400
 Wire Wire Line
@@ -307,69 +359,15 @@ Wire Wire Line
 	3500 4400 3900 4400
 Wire Wire Line
 	3500 4500 3900 4500
-$Comp
-L Conn_01x03_Female J2
-U 1 1 5A55A43D
-P 6900 4500
-F 0 "J2" H 6900 4700 50  0000 C CNN
-F 1 "Conn_01x03_Female" H 6900 4300 50  0001 C CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_1x03_Pitch2.54mm" H 6900 4500 50  0001 C CNN
-F 3 "" H 6900 4500 50  0001 C CNN
-F 4 "SAM1213-03-ND" H 6900 4500 60  0001 C CNN "Digikey Part"
-	1    6900 4500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5800 4500 6700 4500
-$Comp
-L +5V #PWR011
-U 1 1 5A55A622
-P 6600 3850
-F 0 "#PWR011" H 6600 3700 50  0001 C CNN
-F 1 "+5V" H 6600 3990 50  0000 C CNN
-F 2 "" H 6600 3850 50  0001 C CNN
-F 3 "" H 6600 3850 50  0001 C CNN
-	1    6600 3850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6600 3850 6600 4600
 Wire Wire Line
 	6600 4600 6700 4600
-Text Label 3800 4400 0    60   ~ 0
-RST
-Text Label 3800 4500 0    60   ~ 0
-CH_PD
-Text Label 6000 4400 0    60   ~ 0
-GPIO0
-Text Label 6000 4500 0    60   ~ 0
-GPIO2
-$Comp
-L SW_Push SW1
-U 1 1 5A55C0FA
-P 3650 4850
-F 0 "SW1" H 3700 4950 50  0000 L CNN
-F 1 "SW_Push" H 3650 4790 50  0000 C CNN
-F 2 "Buttons_Switches_SMD:SW_SPST_KMR2" H 3650 5050 50  0001 C CNN
-F 3 "" H 3650 5050 50  0001 C CNN
-F 4 "CKN10285CT-ND" H 3650 4850 60  0001 C CNN "Digikey Part"
-	1    3650 4850
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3650 4650 3650 4400
-Connection ~ 3650 4400
-$Comp
-L GND #PWR012
-U 1 1 5A55C3FD
-P 3650 5150
-F 0 "#PWR012" H 3650 4900 50  0001 C CNN
-F 1 "GND" H 3650 5000 50  0001 C CNN
-F 2 "" H 3650 5150 50  0001 C CNN
-F 3 "" H 3650 5150 50  0001 C CNN
-	1    3650 5150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3650 5050 3650 5150
+Connection ~ 3650 4400
+Wire Wire Line
+	3650 4650 3650 4400
 $EndSCHEMATC
